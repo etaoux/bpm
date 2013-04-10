@@ -15,6 +15,7 @@
 		"coffee-script": "x",
 		"commander": ">= 0.5.2",
 		"cssom": "x",
+		"wrench": "x",
 		"minimatch": "x",
 		"nconf": "x",
 		"pkginfo": "x",
