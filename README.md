@@ -2,11 +2,9 @@
 
 bpm 是一个针对 brix 组件开发的包管理器。
 
-bpm = opm + opmext-brix
+> bpm = opm + opmext-brix
 
-bpm 是基于 opm 开发的，通过给 opm 安装 opmext-brix 扩展可实现 bpm 工具的所有功能。
-
-bpm 的整合是为了方便 brix 开发者准备的。
+bpm 是基于 opm 开发的，通过给 opm 安装 opmext-brix 扩展可实现 bpm 工具的所有功能。为了方便 brix 开发者进行了整合。
 
 # 安装
 
