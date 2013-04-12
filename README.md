@@ -6,11 +6,21 @@ bpm 是一个针对 brix 组件开发的包管理器。
 
 bpm 是基于 opm 开发的，通过给 opm 安装 opmext-brix 扩展可实现 bpm 工具的所有功能。为了方便 brix 开发者进行了整合。
 
+## 功能介绍
+
+* 发布brix组件到中央库
+* 安装并使用别人开发的组件
+* 方便的创建组件，维护组件版本
+
 # 安装
+
+需要先安装[nodejs](http://nodejs.org/)。
 
 ```bash
 npm install brix-bpm -g
 ```
+
+安装后，执行 `bpm` 命令若有输出则安装成功。
 
 # 使用
 
@@ -30,32 +40,35 @@ bpm adduser
 
 在创建好的工程目录中执行 `bpm init` 命令初始化一个工程，命令会用收集到的信息生成一个 `package.json`。
 
-其中`name`字段将作为此工程下的所有组件的命名空间前缀。
+其中`name`字段命名请使用 `公司名.部门名.项目名` 的形式。此字段将作为此工程下的所有组件的命名空间前缀。
 
 ```js
 {
-    "name": "etao.ux.x1", // 命名空间
+    "name": "etao.ux.x1", // 工程名，同时为此工程的所有组件的命名空间
     "version": "0.0.3", // 版本，暂时没什么用
 }
 ```
 
 ## 初始化组件
 
-在工程目录中执行 `bpm create component_name` 可以初始化一个组件。
+在工程目录中执行 `bpm create component_name` 可以创建一个组件。
 
 会生成一个 `package.json` 文件，以下两项必选：
 
- - `name`，格式如 `namespace_subname`
- - `version`，建议采用 [semver](http://semver.org/) 规范（[中文版](http://www.cnblogs.com/yaoxing/archive/2012/05/14/semantic-versioning.html)）
-
-另外，还可以用 `dependencies` 配置此组件的依赖。当组件被安装时，其依赖也会被安装到 `imports` 目录中。
+ - `name`，格式如 `namespace_subname`，工具会根据所在工程目录自动生成一个默认值，若有修改请填写包括命名空间的完整名字。
+ - `version`，采用 [semver](http://semver.org/) 规范（[中文版](http://www.cnblogs.com/yaoxing/archive/2012/05/14/semantic-versioning.html)），每次发布组件的新版本前需要手动修改此版本号。
+ - `dependencies` 配置此组件的依赖。需要指定依赖组件的版本，始终使用最新版则用`latest`表示。
 
 `package.json` 示例如下：
 
 ```js
 {
     "name": "etao.ux.ehome_hotsale",
-    "version": "0.0.1"
+    "version": "0.0.1",
+    "dependencies": {
+      "etao.ux.x1_banner": "0.0.1",
+      "etao.ux.ehome_footer": "latest"
+    }
 }
 ```
 
@@ -69,7 +82,7 @@ bpm adduser
 bpm publish
 ```
 
-将组件发布到中央库，并同时存放在 `exports/component_name/version/` 目录中。
+将组件发布到中央库，并同时存放在工程目录下 `exports/component_name/version/` 目录中。
 
 发布完成之后，可以到 [一淘 UX 规范中心](http://ux.etao.com/jades) 查看
 （由于定时任务暂时还没跑起来，需要知会逸才手工同步）。
