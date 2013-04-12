@@ -4,11 +4,11 @@ bpm 是一个针对 brix 组件开发的包管理器。
 
 > bpm = opm + opmext-brix
 
-bpm 是基于 opm 开发的，通过给 opm 安装 opmext-brix 扩展可实现 bpm 工具的所有功能。为了方便 brix 开发者进行了整合。
+bpm 是基于 [opm](https://github.com/objectjs/opm) 开发的，通过给 opm 安装 [opmext-brix](https://github.com/etaoux/opmext-brix) 扩展可实现 bpm 工具的所有功能。为了方便 brix 开发者进行了整合。
 
 ## 功能介绍
 
-* 发布brix组件到中央库
+* 发布 brix 组件到中央库
 * 安装并使用别人开发的组件
 * 方便的创建组件，维护组件版本
 
@@ -51,7 +51,7 @@ bpm adduser
 
 ## 初始化组件
 
-在工程目录中执行 `bpm create component_name` 可以创建一个组件。
+在工程目录中执行 `bpm create component_name` 会在 `components/component_name` 目录中创建一个组件。
 
 会生成一个 `package.json` 文件，以下两项必选：
 
@@ -95,7 +95,9 @@ bpm publish
 bpm install namespace_component
 ```
 
-组件 __及其依赖__ 会被安装到 `imports/namespace/component_name/version/` 目录中
+组件 __及其依赖__ 会被安装到 `imports/namespace/component_name/version/` 目录中。
+
+安装后的组件中的 `kissy.add` 和 `bx-name` 属性会被替换成新的路径。
 
 可安装组件可到[中心库](http://ux.etao.com/jades/)查询
 
