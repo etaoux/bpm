@@ -1,5 +1,3 @@
-# 介绍
-
 bpm 是一个针对 brix 组件开发的包管理器。
 
 > bpm = opm + opmext-brix
