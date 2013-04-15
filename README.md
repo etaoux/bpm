@@ -95,6 +95,10 @@ bpm install namespace_component
 
 可安装组件可到[中心库](http://ux.etao.com/jades/)查询
 
+# 例子
+
+[bpm-test](http://github.com/etaoux/bpm-test/) 项目中有一些用例，参考文档学习看看使用效果吧！
+
 # 升级
 
 bpm 还是一个新生项目，将会持续的进行改进，如果你发现什么问题，不如先尝试 ```npm update brix-bpm -g```看看勤奋的开发者有没有已经修复这个问题。如果还是不行的话，欢迎到Issues中进行提交，或直接联系开发者，谢谢。
