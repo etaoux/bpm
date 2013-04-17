@@ -13,7 +13,7 @@ bpm 是基于 [opm](https://github.com/objectjs/opm) 开发的，通过给 opm �
 # 安装
 
 1. 安装[nodejs](http://nodejs.org/)；
-2. 用 npm 安装 bpm：```npm install brix-bpm -g```；
+2. 用 npm 安装 bpm：```sudo npm install brix-bpm -g```；
 3. 安装后，执行 `bpm` 命令若有输出则安装成功。
 
 # 使用
