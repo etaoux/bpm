@@ -28,13 +28,37 @@ bpm adduser
 
 根据提示完成即可。阿里用户请使用与域账号相同的用户名进行注册，密码则可以不同。后续我们将支持域账户登录。
 
+## 目录结构
+
+在开始使用之前，请了解被bpm维护的库有两种类型，工程和组件，部分命令在执行的时候有目录的区别，请注意鉴别。
+
+一个典型的目录结构是这样的：
+
+<pre>
+ux.subway.trunk / 此为工程目录，相关命令有 `init`、`create`
+├── package.json
+├── components
+│   └── sidebar / 此为组件目录，相关命令有 `publish`、`preview`、`export`
+│       ├── package.json
+│       ├── index.js
+│       └── index.css
+└── imports
+    └── ux.brix.core
+        └── datepicker
+            └── 1.0.0
+                ├── package.json
+                ├── template.html
+                └── data.js
+
+</pre>
+
 ## 初始化工程
 
 所有 brix 组件都应该隶属于一个工程，同样的，这个工程也是一个被 bpm 维护的包。
 
-在创建好的工程目录中执行 `bpm init` 命令初始化一个工程，命令会用收集到的信息生成一个 `package.json`。
+在创建好的_工程目录中_执行 `bpm init` 命令初始化一个工程，命令会用收集到的信息生成一个 `package.json`。
 
-其中`name`字段命名请使用 `公司名.部门名.项目名` 的形式。此字段将作为此工程下的所有组件的命名空间前缀。
+其中`name`字段命名请使用 `部门名.项目名.项目分支名` 的形式。此字段将作为此工程下的所有组件的命名空间前缀。
 
 ```js
 {
@@ -45,7 +69,7 @@ bpm adduser
 
 ## 初始化组件
 
-在工程目录中执行 `bpm create component_name` 会在 `components/component_name` 目录中创建一个组件。
+在_工程目录中_执行 `bpm create component_name` 会在 `components/component_name` 目录中创建一个组件。
 
 会生成一个 `package.json` 文件，以下两项必选：
 
@@ -70,7 +94,7 @@ bpm adduser
 
 ## 发布组件
 
-在组件目录中执行：
+在_组件目录中_执行：
 
 ```shell
 bpm publish
@@ -83,7 +107,7 @@ bpm publish
 
 ## 安装组件
 
-在工程目录中执行：
+在_工程目录中_执行：
 
 ```shell
 bpm install namespace_component
