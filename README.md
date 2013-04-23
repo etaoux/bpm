@@ -37,10 +37,10 @@ bpm adduser
 一个典型的目录结构是这样的：
 
 <pre>
-ux.subway.trunk / 此为工程目录，相关命令有 `init`、`create`
+ux.subway.trunk / 此为工程目录，相关命令有 init、create
 ├── package.json
 ├── components
-│   └── sidebar / 此为组件目录，相关命令有 `publish`、`preview`、`export`
+│   └── sidebar / 此为组件目录，相关命令有 publish、preview、export
 │       ├── package.json
 │       ├── index.js
 │       └── index.css
@@ -58,7 +58,7 @@ ux.subway.trunk / 此为工程目录，相关命令有 `init`、`create`
 
 所有 brix 组件都应该隶属于一个工程，同样的，这个工程也是一个被 bpm 维护的包。
 
-在创建好的_工程目录中_执行 `bpm init` 命令初始化一个工程，命令会用收集到的信息生成一个 `package.json`。
+在创建好的 _工程目录中_ 执行 `bpm init` 命令初始化一个工程，命令会用收集到的信息生成一个 `package.json`。
 
 其中`name`字段命名请使用 `部门名.项目名.项目分支名` 的形式。此字段将作为此工程下的所有组件的命名空间前缀。
 
@@ -71,7 +71,7 @@ ux.subway.trunk / 此为工程目录，相关命令有 `init`、`create`
 
 ## 初始化组件
 
-在_工程目录中_执行 `bpm create component_name` 会在 `components/component_name` 目录中创建一个组件。
+在 _工程目录中_ 执行 `bpm create component_name` 会在 `components/component_name` 目录中创建一个组件。
 
 会生成一个 `package.json` 文件，以下两项必选：
 
@@ -96,7 +96,7 @@ ux.subway.trunk / 此为工程目录，相关命令有 `init`、`create`
 
 ## 发布组件
 
-在_组件目录中_执行：
+在 _组件目录中_ 执行：
 
 ```shell
 bpm publish
@@ -109,13 +109,13 @@ bpm publish
 
 ## 安装组件
 
-在_工程目录中_执行：
+在 _工程目录中_ 执行：
 
 ```shell
 bpm install namespace_component
 ```
 
-组件 __及其依赖__ 会被安装到 `imports/namespace/component_name/version/` 目录中。
+组件 _及其依赖_ 会被安装到 `imports/namespace/component_name/version/` 目录中。
 
 安装后的组件中的 `kissy.add` 和 `bx-name` 属性会被替换成新的路径。
 
