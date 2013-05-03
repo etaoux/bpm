@@ -75,7 +75,7 @@ ux.subway.trunk / 此为工程目录，相关命令有 init、create
 
 会生成一个 `package.json` 文件，以下两项必选：
 
- - `name`，格式如 `namespace_subname`，工具会根据所在工程目录自动生成一个默认值，若有修改请填写包括命名空间的完整名字。
+ - `name`，格式如 `namespace_subname`，工具会根据所在工程目录自动生成一个默认值，若有修改请填写包括命名空间的完整名字，组件subname请使用“-”分隔，如`date-selector`，以方便初始化工具自动生成类名，如`DateSelector`。
  - `version`，采用 [semver](http://semver.org/) 规范（[中文版](http://www.cnblogs.com/yaoxing/archive/2012/05/14/semantic-versioning.html)），每次发布组件的新版本前需要手动修改此版本号。
  - `dependencies` 配置此组件的依赖。需要指定依赖组件的版本，始终使用最新版则用`latest`表示。
 
